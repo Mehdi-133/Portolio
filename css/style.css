@@ -6,7 +6,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Ubuntu", sans-serif;
-  font-weight: 400;
   font-style: normal;
 }
 
@@ -22,11 +21,13 @@
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  
   line-height: 1.7;
   overflow-x: hidden;
   height: 100%;
   width: 100%;
+  
+
 }
 
 /* navbar */
@@ -39,6 +40,7 @@ body {
   position: fixed;
   width: 100%;
   z-index: 100;
+ 
 }
 
 .navbar ul {
@@ -91,7 +93,7 @@ body {
 #container {
   max-width: 100%;
   height: 100vh;
-  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--primary) 100%);
+  background: radial-gradient( circle , var(--primary) 0%, var(--secondary) 50%, var(--primary) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -103,13 +105,14 @@ body {
 #container4 {
   max-width: 100vw;
   height: max-content;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   padding: 30px 0;
+
 }
 
 #container5 {
-  max-width: 1920px;
+  height: max-content;
 }
+
 
 /* profile */
 .profile-info {
@@ -119,7 +122,6 @@ body {
   justify-content: center;
   text-align: center;
   padding: 20px;
-  border: #1A1A1A;
 }
 
 .propos-info,
@@ -154,7 +156,7 @@ body {
 }
 
 .profile-image:hover {
-  transform: scale(1.05);
+   transform: scale(1.05);
 }
 
 .buttons-info {
@@ -178,7 +180,8 @@ body {
   transition: 0.3s;
 }
 
-.button:hover {
+.button:hover
+ {
   transform: scale(1.2);
 }
 
@@ -202,7 +205,7 @@ body {
   flex: 1;
   max-width: 600px;
   font-size: 18px;
-  line-height: 1.8;
+  line-height: 2.5;
   color: var(--dark);
   margin-left: 50px;
   text-align: justify;
@@ -226,13 +229,11 @@ body {
 .skill-info{
   display: flex;
   justify-content: space-between;
-  margin-bottom: 6px;
 }
 
 .skill strong{
   display: flex;
   justify-content: flex-end;
-  font-weight: bold;
 }
 
 .skill label {
@@ -241,14 +242,13 @@ body {
 }
 
 .bar {
-  background-color: var(--transparent);
   border-radius: 10px;
   height: 20px;
   width: 400px;
   margin: 5px 0 10px;
   position: relative;
   overflow: hidden;
-  border: solid 1px var(--primary) ;
+  border: 3px groove var(--secondary);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   
 }
@@ -256,48 +256,36 @@ body {
 .progress {
   background-color: var(--secondary);
   height: 100%;
-  text-align: right;
-  line-height: 20px;
-  color: var(--dark);
-  font-size: 14px;
   border-radius: 10px;
   width: 0;
   transition: width 1s ease;
   position: absolute;
   
-
 }
 
 .skill:hover .progress{
 width: var(--value);
 
-
-
 }
 
-
-
-.persent1 {
-  margin-left: 400px;
-}
-
-.persent2 {
-  margin-left: 190px;
-}
 /*  projects */
 .myprojects,
 .project2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid #444;
+  border: 3px groove var(--secondary);
   border-radius: 15px;
   width: 450px;
   padding: 30px;
   margin: 50px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s, transform 0.3s;
   text-align: center;
-  background-color: var(--white);
+  
+}
+.myprojects:hover, .project2:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 12px 32px rgba(52,211,167,0.14);
 }
 
 .all {
@@ -307,6 +295,17 @@ width: var(--value);
   align-items: center;
 }
 
+.image2{
+  height: 200px;
+  width: 448px;
+  object-fit: cover;
+  margin-top: 15px ;
+  margin-bottom: 15px;
+}
+
+.element2 h3 span{
+  color: #191970;
+}
 .element2 h2,
 .element2 p {
   color: var(--dark);
@@ -360,7 +359,7 @@ width: var(--value);
   gap: 20px;
   max-width: 900px;
   margin: 0 auto;
-  border-left: 4px solid var(--secondary);
+  border-left: 4px groove var(--secondary);
   height: 600px;
 }
 
@@ -394,8 +393,15 @@ width: var(--value);
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 250px;
+  gap: 200px;
   padding: 2rem;
+}
+
+.label {
+  
+  display: flex;
+  justify-content: center;
+  margin: 3rem 0;
 }
 
 .contact-info-section {
@@ -403,15 +409,14 @@ width: var(--value);
   height: 30rem;
 }
 
-.contact-info-section h5,
+
 .message_title {
   text-align: center;
   color: var(--dark);
+  margin-bottom: 30px;
 }
 
-.contact-info-section h5 {
-  padding: 20px;
-}
+
 
 .info-card {
   padding: 20px;
@@ -419,12 +424,7 @@ width: var(--value);
   height: 10rem;
 }
 
-.label {
-  font-size: 20px;
-  display: flex;
-  justify-content: center;
-  margin: 3rem 0;
-}
+
 
 input,
 textarea {
@@ -454,7 +454,7 @@ textarea {
 }
 
 .submit-btn:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 
@@ -463,6 +463,11 @@ textarea {
   flex-flow: column;
   gap: 2rem;
   padding: 1rem;
+  border: 3px groove var(--secondary);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+
+
 }
 
 .contact-form {
@@ -570,6 +575,7 @@ footer p {
 
   .statistics {
     width: 90%;
+    margin-bottom: -5rem;
   }
 
   .skill {
@@ -598,10 +604,21 @@ footer p {
     padding-left: 35px;
   }
 
+  .myprojects,
+  .project2{
+   width: 400px ;
+  }
+
+  .image2{
+    width: 400px;
+  }
+
   .contact-info-section {
     width: 16rem;
     height: 16rem;
+    margin-bottom: 6rem;
   }
+
 }
 
 
